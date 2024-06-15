@@ -1,0 +1,137 @@
+/* Global styles for the entire application */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of the viewport */
+  font-family: Arial, sans-serif; /* Font family for the entire app */
+}
+
+/* Styles for the main flow builder container */
+.flow-builder {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Takes remaining vertical space */
+}
+
+/* Styles for the node panel on the left side */
+.node-panel {
+  width: 30%; /* Width of the panel */
+  background: white; /* Background color */
+  padding: 10px; /* Padding inside the panel */
+  border-right: 1px solid #ccc; /* Right border */
+}
+
+/* Styles for the settings panel on the right side */
+.settings-panel {
+  width: 30%; /* Width of the panel */
+  background: white; /* Background color */
+  padding: 10px; /* Padding inside the panel */
+  border-left: 1px solid #ccc; /* Left border */
+}
+
+/* Styles for each node item in the node panel */
+.node-item {
+  display: flex;
+  color: #3354a1; /* Text color */
+  flex-direction: column;
+  padding: 50px; /* Padding inside the item */
+  background: white; /* Background color */
+  border: 1px solid #3354a1; /* Border */
+  margin-bottom: 10px; /* Bottom margin */
+  cursor: pointer; /* Cursor type */
+  width: 50%; /* Width of the item */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+/* Styles for the save button */
+.save-button {
+  padding: 10px 20px; /* Padding inside the button */
+  border: 1px blue solid; /* Border style */
+  color: blue; /* Text color */
+  border-radius: 3px; /* Border radius */
+  cursor: pointer; /* Cursor type */
+  margin-top: 10px; /* Top margin */
+  margin-bottom: 10px; /* Bottom margin */
+  width: 10%;
+}
+
+.save-button:hover {
+  transform: scale(1.2); /* Hover effect: scale up */
+}
+
+/* Container for the save button */
+.button-container {
+  display: flex;
+  justify-content: space-evenly; /* Align items to the end */
+  background-color: #bdbcbc; /* Background color */
+}
+
+/* Container for the flow and settings panels */
+.flow-container {
+  display: flex; /* Flex container */
+}
+
+/* Styles for the header in the settings panel */
+.settings-header {
+  display: flex; /* Flex container for header */
+  gap: 140px; /* Gap between items */
+  border-bottom: 1px black solid; /* Bottom border */
+  margin-bottom: 100px; /* Bottom margin */
+}
+
+/* Styles for the input section in the settings panel */
+.settings-input {
+  display: flex; /* Flex container for inputs */
+  flex-direction: column; /* Arrange items vertically */
+}
+
+/* Styles for the custom text node */
+.text-node {
+  border: 1px solid #ddd; /* Border style */
+  border-radius: 5px; /* Border radius */
+  background: #e0f7fa; /* Background color */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
+  font-family: "Arial", sans-serif; /* Font family */
+  width: 200px; /* Width of the node */
+}
+
+/* Styles for the header section of the custom text node */
+.header {
+  display: flex; /* Flex container for header */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Align items vertically */
+  background: #a5d6c7; /* Background color */
+  border-top-left-radius: 5px; /* Top left border radius */
+  border-top-right-radius: 5px; /* Top right border radius */
+  padding: 2px; /* Padding inside the header */
+  font-weight: bold; /* Bold font weight */
+}
+
+/* Styles for the icon in the custom text node header */
+.icon {
+  font-size: 8px; /* Font size */
+  margin-right: 4px; /* Right margin */
+}
+
+/* Styles for the title in the custom text node header */
+.title {
+  font-size: xx-small; /* Font size */
+  flex-grow: 1; /* Grow to fill available space */
+  text-align: center; /* Center align text */
+}
+
+/* Styles for the WhatsApp icon in the custom text node header */
+.whatsapp-icon {
+  width: 10px; /* Width of the icon */
+  height: 10px; /* Height of the icon */
+  padding: 1px; /* Padding around the icon */
+  border-radius: 100%; /* Border radius for circular shape */
+  background-color: white; /* Background color */
+}
+
+/* Styles for the content section in the custom text node */
+.content {
+  padding: 10px; /* Padding inside the content */
+  font-size: 10px; /* Font size */
+}
