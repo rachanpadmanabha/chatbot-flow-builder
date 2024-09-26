@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# React Flow Builder for Chatbots
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Project Structure](#project-structure)
+5. [Component Breakdown](#component-breakdown)
+6. [Getting Started](#getting-started)
+7. [Usage](#usage)
+8. [Customization](#customization)
+9. [Flow Validation](#flow-validation)
+10. [Contributing](#contributing)
+11. [License](#license)
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+The React Flow Builder for Chatbots is a powerful, interactive tool designed to help create and manage chatbot conversation flows. It provides a user-friendly interface for designing complex conversation structures through a drag-and-drop mechanism.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Interactive flow chart creation with drag-and-drop functionality
+- Custom node types for representing different conversation elements
+- Node connection management with validation
+- Settings panel for editing node properties
+- Flow validation to ensure proper chatbot conversation structure
+- Ability to save and validate the created flow
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- react-flow-renderer
+- react-dnd (React DnD)
+- Material-UI icons
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+|-- components/
+|   |-- FlowBuilder.js
+|   |-- NodePanel.js
+|   |-- SettingsPanel.js
+|   |-- SaveButton.js
+|   |-- nodes/
+|       |-- TextNode.js (assumed)
+|-- utils/
+|   |-- removeElements.js
+|-- App.js (assumed)
+|-- index.js (assumed)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Component Breakdown
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### FlowBuilder.js
 
-### `npm run eject`
+- Main component that manages the overall state and logic of the flow builder
+- Handles node and edge management, drag-and-drop functionality, and component rendering
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### NodePanel.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Renders draggable node items that can be added to the flow
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### SettingsPanel.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Provides an interface for editing the properties of selected nodes
 
-## Learn More
+### SaveButton.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Implements flow validation logic and provides a save functionality
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### TextNode.js (assumed)
 
-### Code Splitting
+- Custom node type for representing text messages in the chatbot flow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Getting Started
 
-### Analyzing the Bundle Size
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/react-flow-builder.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd react-flow-builder
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Start the development server:
+   ```
+   npm start
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Usage
 
-### Making a Progressive Web App
+1. Drag nodes from the NodePanel onto the canvas to create new conversation elements.
+2. Connect nodes by dragging from one node's handle to another.
+3. Click on a node to open the SettingsPanel and edit its properties.
+4. Use the SaveButton to validate and save your flow.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Customization
 
-### Advanced Configuration
+### Adding New Node Types
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To add new node types:
 
-### Deployment
+1. Create a new component in the `nodes/` directory.
+2. Add the new node type to the `nodeTypes` object in `FlowBuilder.js`.
+3. Update the NodePanel to include the new node type.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Styling
 
-### `npm run build` fails to minify
+The project uses CSS for styling. Modify the CSS classes in the component files to change the appearance of the Flow Builder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Flow Validation
+
+The SaveButton component includes a `validateFlow` function that checks for:
+
+- Isolated nodes
+- Multiple source nodes
+- Nodes with multiple outgoing edges
+- Self-loops
+- Unreachable nodes
+
+Ensure your flow passes these validations before saving.
+
+## Contributing
+
+We welcome contributions to improve the React Flow Builder! Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature-branch-name`
+3. Make your changes and commit them: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature-branch-name`
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+For any additional questions or support, please open an issue in the GitHub repository.
